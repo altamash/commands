@@ -1,0 +1,11 @@
+Linux commands
+==============
+
+> file_name
+vi file_name
+esc + :wq to save
+ggVG select all in vi
+
+Rename files
+https://www.freecodecamp.org/news/rename-file-linux-bash-command/
+mv [options] source_file destination_file

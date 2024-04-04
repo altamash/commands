@@ -1,0 +1,13 @@
+Nginx
+nginx -s stop 	fast shutdown
+nginx -s quit 	graceful shutdown
+nginx -s reload	changing configuration, starting new worker processes with a new configuration, graceful shutdown of old worker processes
+nginx -s reopen	re-opening log files
+
+Windows
+Press Win+I on keyboard to bring up Windows Settings.
+Using the search box, search for the "services."
+
+VS Code
+Press Ctrl + Shift + P to open command palette.
+Type Spring Initializr to start generating a Maven or Gradle project.

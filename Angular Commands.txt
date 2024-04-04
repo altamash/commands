@@ -1,0 +1,34 @@
+SCSS
+https://medium.com/@ngubanethabo.ambrose/migrate-from-css-to-scss-stylesheets-for-existing-angular-application-d61f8061f5b7
+ng new my-scss-app --style=scss
+Or
+For newer versions run the following command to change the default stylesheets extension.
+ng config defaults.styleExt=scss
+If you get an error like Value cannot be found. Use the following command
+ng config schematics.@schematics/angular:component.styleext scss
+Or you can directly set the schematics in the angular.json config file like the below:
+"schematics": {
+      "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+}
+npm i -g renamer
+cd src
+renamer -d --path-element ext --find css --replace scss * (Dry run)
+renamer --path-element ext --find css --replace scss *
+renamer -d --path-element ext --find css --replace scss "** (Recursive, Dry run)
+renamer --path-element ext --find css --replace scss "** (Recursive)
+---------------------------------------------------------------------------------------------------------------------------
+ng new app-name
+---------------------------------------------------------------------------------------------------------------------------
+npm install -g angular-cli-ghpages
+ng build --prod --base-href https://mohammadaltamash.github.io/transport-app/
+angular-cli-ghpages -d dist/transport-app-client/ --no-silent
+https://mohammadaltamash.github.io/transport-app/
+https://mohammadaltamash.github.io
+---------------------------------------------------------------------------------------------------------------------------
+How to Deploy Angular Application to Heroku
+https://itnext.io/how-to-deploy-angular-application-to-heroku-1d56e09c5147
+---------------------------------------------------------------------------------------------------------------------------
+npm install -g @angular/cli	- Latest version of Angular CLI
+ng update @angular/cli @angular/core

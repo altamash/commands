@@ -1,0 +1,5 @@
+Ctrl + E			Recent files
+Ctrl + Shift + E	Recent files with changes
+Ctrl + Alt + F8		Quick evaluate expression
+Ctrl + F9			Build project
+Ctrl + Shift + A	Reset frame (in debugging)

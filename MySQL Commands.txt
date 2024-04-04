@@ -1,0 +1,21 @@
+#The simplest way to see the explanation of a current table and its constraints is to use:
+SHOW CREATE TABLE mytable;
+#Host '52.190.45.66' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts'
+FLUSH HOSTS;
+SET FOREIGN_KEY_CHECKS=0;
+ALTER TABLE table_name MODIFY column_name varchar(new_length);
+
+SHOW SESSION VARIABLES LIKE 'wait_timeout';
+select count(*) from information_schema.processlist where Command='Sleep';
+SHOW PROCESSLIST;
+
+Query profiling
+SET SESSION profiling = 1;
+USE sakila;
+SELECT * FROM customer;
+SHOW PROFILES;
+SELECT * FROM INFORMATION_SCHEMA.PROFILING WHERE QUERY_ID=114; observe SEQ (Sequence) 9 – 12.
+SET GLOBAL slow_query_log = 'ON';
+SET GLOBAL long_query_time = 60; default 10 seconds
+SHOW GLOBAL VARIABLES LIKE 'slow_query_log';
+SET GLOBAL slow_query_log = 'OFF';

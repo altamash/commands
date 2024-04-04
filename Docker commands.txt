@@ -1,0 +1,28 @@
+To access localhost from Toolbox 
+docker-machine ls (https://forums.docker.com/t/on-windows-7-i-am-using-docker-tool-box-and-not-able-to-ping-jenkins-running-in-container/49837/4)
+
+docker pull mysql:5.7
+docker build -t backend ., docker images
+docker network create springmysql-net, docker network ls
+
+Run the MySQL container in the network using the following.
+docker run --name mysqldb --network springmysql-net -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=employeedb -e MYSQL_USER=sa -e MYSQL_PASSWORD=1234 -d mysql:5.7
+docker logs -f <container_name>
+
+If needed we can check if the database employeedb has been created correctly.
+We can do the following commands.
+- docker exec -it <container_id> bash
+- mysql -u<username> -p<password>
+- show databases;
+
+Run the following command to remove Docker container:
+docker stop <Container_ID>
+docker rm <Container_ID>
+
+https://betulsahinn.medium.com/dockerizing-a-spring-boot-application-and-using-the-jib-maven-plugin-95c329866f34
+https://www.tutorialspoint.com/docker/docker_storage.htm
+
+docker run -p 9000:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:12.0.4
+
+Run SonarQube server locally using docker/docker-compose
+https://dev-to-dev.com/run-sonarqube-server-locally-using-docker-docker-compose-and-scan-react-project-using-docker-run-sonarsource-sonar-scanner-cli/

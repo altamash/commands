@@ -1,0 +1,13 @@
+https://www.geeksforgeeks.org/how-to-install-and-run-apache-kafka-on-windows/
+
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test-topic --from-beginning
+.\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --delete --topic email-alert
+.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+.\bin\windows\kafka-console-producer.bat --topic graphql-subscription-topic --bootstrap-server localhost:9092
+
+.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic graphql-subscription-topic --from-beginning

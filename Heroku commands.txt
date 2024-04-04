@@ -1,0 +1,11 @@
+heroku login -i
+heroku logs --app solarbackendapi
+Use heroku authorizations:create for production apps, use heroku auth:token for development.
+
+https://coderwall.com/p/ovz1nq/using-external-database-with-heroku
+mysql://b231a25357a975:6c6f8438@us-cdbr-east-02.cleardb.com/heroku_5015c77d6c0df88?reconnect=true?zeroDateTimeBehavior=convertToNull
+[adapter]://[username]:[password]:[server_address]:[port]/[database_name]
+jdbc:mysql://solardbdev.mysql.database.azure.com:3306/solardbdev?useSSL=true&requireSSL=false"; myDbConn = DriverManager.getConnection(url, "dataadmin@solardbdev", solaRadmiN123);
+heroku config:add DATABASE_URL=mysql://user:pass@server:port/database_name
+heroku config:add DATABASE_URL=mysql://dataadmin:solaRadmiN123:solardbdev.mysql.database.azure.com:3306/solardbdev --app solarbackendapi-stage
+heroku config:add DATABASE_URL=mysql://b231a25357a975:6c6f8438@us-cdbr-east-02.cleardb.com/heroku_5015c77d6c0df88?reconnect=true?zeroDateTimeBehavior=convertToNull --app solarbackendapi-stage

@@ -1,0 +1,123 @@
+Vim Commands
+============
+
+Copy is called yank (y), cut is called delete (d), and paste is called put (p).
+
+Copy, Cut, and Paste in Visual Mode (v/V, y/d, P/p)
+1 Place the cursor on the line you want to begin copping or cutting.
+2 The visual mode has three subtypes.
+	Press v to enter the visual mode.
+	Press V to enter visual line mode, where the text is selected by line.
+	Press Ctrl+v to enter visual block mode. In this mode, the text is selected by rectangle blocks.
+	Entering the visual mode also marks a starting selection point.
+3 Move the cursor to the end of the text you want to copy or cut. You can use a movement command or up, down, right, and left arrow keys.
+4 Press y to copy, or d to cut the selection.
+5 Move the cursor to the location where you want to paste the contents.
+6 Press P to paste the contents before the cursor, or p to paste it after the cursor.
+
+To copy and paste a chunk of code in Vim follow these instructions;
+    Place the cursor on the line you want to begin cutting.
+    Press V to select the entire line, or v to select from where your cursor is.
+    Move the cursor to the end of what you want to copy, using h,j,k, or l
+    Press y to copy it, or d to cut it.
+    Place the cursor where you would like to paste your copied stuff.
+    Press P to paste it before your cursor, or p to paste it after the cursor.
+
+
+https://www.marquette.edu/mathematical-and-statistical-sciences/basic-vi-editor-commands.php
+
+Undo/Redo
+To undo changes use the u, :u or :undo
+To redo a change use the Ctrl-R or :redo
+
+https://www.cyberciti.biz/faq/vim-undo/
+List tree of changes
+:undolist
+:earlier, :later, g- and g+ commands
+The syntax is as follows.
+:earlier {count}	Go to older text state {count} times.
+:earlier {N}s		Go to older text state about {N} seconds before.
+:earlier {N}m		Go to older text state about {N} minutes before.
+:earlier {N}h		Go to older text state about {N} hours before.
+:earlier {N}d		Go to older text state about {N} days before.
+:later {count}		Go to newer text state {count} times.
+:later {N}s		Go to newer text state about {N} seconds later.
+:later {N}m		Go to newer text state about {N} minutes later.
+:later {N}h		Go to newer text state about {N} hours later.
+:later {N}d		Go to newer text state about {N} days later.
+g-			Go to older text state.  With a count repeat that many times. 
+g+			Go to newer text state.  With a count repeat that many times.
+
+Basic Find and Replace
+:[range]s/{pattern}/{string}/[flags] [count]
+For example, to search for the first occurrence of the string ‘foo’ in the current line and replace it with ‘bar’, you would use:
+:s/foo/bar/
+To replace all occurrences of the search pattern in the current line, add the g flag:
+:s/foo/bar/g
+If you want to search and replace the pattern in the entire file, use the percentage character % as a range. This character indicates a range from the first to the last line of the file:
+:%s/foo/bar/g
+If the {string} part is omitted, it is considered as an empty string, and the matched pattern is deleted. The following command deletes all instances of the string ‘foo’ in the current line:
+:s/foo//g
+To ignore case for the search pattern, use the i flag:
+:s/Foo/bar/gi
+
+To insert text:
+Command 	Insert Text
+-------		-----------
+If			beginnig of line
+i 			before cursor
+a 			after cursor
+A 			at the end of the line
+o 			open a line below the current line
+O 			open a line above the current line
+r 			replace the current character
+R 			replace characters until <ESC>, overwrite
+
+To move the cursor:
+
+You must be in Command Mode to use commands that move the cursor. Each of these commands can be preceded with a Repeat Factor.
+
+Examples:
+8j will move the cursor down 8 lines
+3w will move the cursor 3 words to the right.
+Command 						Moves the cursor
+-------							----------------
+SPACE, l (el), or right arrow 	space to the right
+h or left arrow 				space to the left
+j or down arrow 				down one line
+k or up arrow 					up one line
+w 								word to the right
+b 								word to the left
+$ 								end of the line
+0 (zero) 						beginning of the line
+e 								end of the word to the right
+- 								beginning of previous line
+) 								end of the sentence
+( 								beginning of the sentence
+} 								end of paragraph
+{ 								beginning of paragraph
+
+
+
+VI Editing commands
+    i – Insert at cursor (goes into insert mode)
+    a – Write after cursor (goes into insert mode)
+    A – Write at the end of line (goes into insert mode)
+    ESC – Terminate insert mode
+    u – Undo last change
+    U – Undo all changes to the entire line
+    o – Open a new line (goes into insert mode)
+    dd – Delete line
+    3dd – Delete 3 lines.
+    D – Delete contents of line after the cursor
+    C – Delete contents of a line after the cursor and insert new text. Press ESC key to end insertion.
+    dw – Delete word
+    4dw – Delete 4 words
+    cw – Change word
+    x – Delete character at the cursor
+    r – Replace character
+    R – Overwrite characters from cursor onward
+    s – Substitute one character under cursor continue to insert
+    S – Substitute entire line and begin to insert at the beginning of the line
+    ~ – Change case of individual character
+
